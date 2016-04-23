@@ -33,7 +33,6 @@ public class InvertedIndexMapper extends MapReduceBase
 		    Matcher matcher    = pattern.matcher(inputStr);
 		    
 		    
-		    
 		    while (matcher.find()) {
 		    	Long tmp = key.get() + (long)matcher.start();
 		    	ArrayList<Long> arr = new ArrayList<Long>();

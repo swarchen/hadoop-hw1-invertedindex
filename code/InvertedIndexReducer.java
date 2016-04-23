@@ -39,9 +39,6 @@ public class InvertedIndexReducer extends MapReduceBase
 	public void reduce(ITTKey key, Iterator<ITTValue> values,
 		OutputCollector<ITTKey, ITTValue> output, Reporter reporter) throws IOException {	
 		
-		
-	
-		
 		ArrayList<Long> arr = new ArrayList<Long>();
 		
 		while (values.hasNext()) {

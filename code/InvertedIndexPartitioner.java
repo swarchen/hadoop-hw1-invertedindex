@@ -13,8 +13,6 @@ public class InvertedIndexPartitioner implements Partitioner<ITTKey, ITTValue> {
 	public void configure(JobConf job) {
 	}
 
-	// TODO modify this function to assign the words start with Aa ~ Gg 
-	//      to first reducer, and the remaining words to second reducer.
 	public int getPartition(ITTKey key, ITTValue value, int numPartitions) {
 		String s = key.getWord().substring(0,1);
 		int num;

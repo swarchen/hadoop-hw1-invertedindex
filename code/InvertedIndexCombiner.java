@@ -19,9 +19,6 @@ public class InvertedIndexCombiner extends MapReduceBase
 	public void reduce(ITTKey key, Iterator<ITTValue> values,
 		OutputCollector<ITTKey, ITTValue> output, Reporter reporter) throws IOException {	
 		
-		// TODO : Calculate (key, <Word1, Word2 ... >) 
-		//		  to (key, Word1 + Word2 + ...)
-		
 		ArrayList<Long> arr = new ArrayList<Long>();
 		
 		while (values.hasNext()) {

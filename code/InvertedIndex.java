@@ -20,10 +20,7 @@ public class InvertedIndex {
 	}
 	
 	public void run (String inputPath, String outputPath) throws IOException {
-		/* 
-		 * You can lookup usage of these api from this website. =)
-		 * http://tool.oschina.net/uploads/apidocs/hadoop/index.html?overview-summary.html
-	   	 */
+
 		 
 		JobConf conf = new JobConf(InvertedIndex.class);
 		conf.setJobName("Inverted Index");
@@ -31,12 +28,7 @@ public class InvertedIndex {
 		conf.setMapperClass(InvertedIndexMapper.class);
 		conf.setReducerClass(InvertedIndexReducer.class);
 		conf.setCombinerClass(InvertedIndexCombiner.class);
-		
-		/*
-		 * If your mapper output key-value pair is different from final 
-		 * output key-value pair, please remember to setup these two APIs.
-		 */ 
-
+		conf.setPartitionerClass(InvertedIndexPartitioner.class);
 		
 		conf.setMapOutputKeyClass(ITTKey.class);
 		conf.setMapOutputValueClass(ITTValue.class);
@@ -44,11 +36,6 @@ public class InvertedIndex {
 		conf.setOutputKeyClass(ITTKey.class);
 		conf.setOutputValueClass(ITTValue.class);
 		
-		
-		// TODO setup your partitioner class
-		conf.setPartitionerClass(InvertedIndexPartitioner.class);
-		
-	
 		FileInputFormat.addInputPath(conf, new Path(inputPath));
 		FileOutputFormat.setOutputPath(conf, new Path(outputPath));
 
@@ -66,22 +53,14 @@ public class InvertedIndex {
 		conf.setMapperClass  (BuildTableMapper.class);
 		conf.setReducerClass (BuildTableReducer.class);
 		conf.setCombinerClass(BuildTableCombiner.class);
-		
-		/*
-		 * If your mapper output key-value pair is different from final 
-		 * output key-value pair, please remember to setup these two APIs.
-		 */ 
+		conf.setPartitionerClass(BuildTablePartitioner.class);
 
-		
 		conf.setMapOutputKeyClass(TableKey.class);
 		conf.setMapOutputValueClass(TableValue.class);
 		
 		conf.setOutputKeyClass(TableKey.class);
 		conf.setOutputValueClass(TableValue.class);
 		
-		
-		// TODO setup your partitioner class
-		conf.setPartitionerClass(BuildTablePartitioner.class);
 		
 	
 		FileInputFormat.addInputPath(conf, new Path(inputPath));
