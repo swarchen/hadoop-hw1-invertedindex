@@ -6,7 +6,7 @@
 input_dir=/user/s104061516/InvertedIndex/testOutput
 output_dir=/user/s104061516/InvertedIndex/testTableOutput
 hdfs dfs -rm -r $output_dir
-hadoop jar BuildTable.jar part3.InvertedIndex  $input_dir $output_dir
+hadoop jar BuildTable.jar invertedindex.InvertedIndex  $input_dir $output_dir
 hdfs dfs -cat $output_dir/part-*
 ~
 ~

@@ -1,4 +1,4 @@
-package part3;
+package invertedindex;
 
 import java.io.IOException;
 import java.util.ArrayList;
