@@ -25,6 +25,7 @@ public class InvertedIndexMapper extends MapReduceBase
 			// File name
 			FileSplit fileSplit	   = (FileSplit)reporter.getInputSplit();
 	      	String    filename     = fileSplit.getPath().getName();
+			System.out.print(fileSplit);
 			
 	      	// Regular Expression
 	      	String  inputStr   = value.toString();
@@ -40,7 +41,8 @@ public class InvertedIndexMapper extends MapReduceBase
 		    	
 		    	ITTValue  offset       = new ITTValue (arr, (Double)0.0);
 		    	ITTKey wordEntry    = new ITTKey(filename, matcher.group());
-		    	reporter.incrCounter("file", filename, 1);
+		    	
+			reporter.incrCounter("file", filename, 1);
 		    	output.collect(wordEntry, offset);
 		    }
 	}

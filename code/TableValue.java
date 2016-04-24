@@ -93,10 +93,10 @@ public class TableValue implements Writable {
 		
 		TermMember termMember = termMembers.get(0);
 		str = str + termMember.getFileName() + " ";
-		str = str + termMember.getTermFreq().toString() + " ";
+		//str = str + termMember.getTermFreq().toString() + " ";
 		
 		int len = termMember.getOffset().size();
-		str = str.concat("[" + termMember.getOffset().get(0).toString());
+		str = str.concat( len + " [" + termMember.getOffset().get(0).toString());
 		for (int j = 1; j < len; j++) {
 			str = str.concat("," + termMember.getOffset().get(j).toString());
 		}
@@ -107,10 +107,10 @@ public class TableValue implements Writable {
 			termMember = termMembers.get(i);
 			str = str + ";";
 			str = str + termMember.getFileName() + " ";
-			str = str + termMember.getTermFreq().toString() + " ";
+			//str = str + termMember.getTermFreq().toString() + " ";
 			
 			len = termMember.getOffset().size();
-			str = str.concat("[" + termMember.getOffset().get(0).toString());
+			str = str.concat(len + " [" + termMember.getOffset().get(0).toString());
 			for (int j = 1; j < len; j++) {
 				str = str.concat("," + termMember.getOffset().get(j).toString());
 			}
