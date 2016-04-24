@@ -6,5 +6,5 @@
 input_dir=/user/s104061516/InvertedIndex/testInput
 output_dir=/user/s104061516/InvertedIndex/testOutput
 hdfs dfs -rm -r $output_dir
-hadoop jar InvertedIndex.jar part3.InvertedIndex  $input_dir $output_dir
+hadoop jar InvertedIndex.jar invertedindex.InvertedIndex  $input_dir $output_dir
 hdfs dfs -cat $output_dir/part-*
