@@ -1,4 +1,4 @@
-package part3;
+package invertedindex;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -56,7 +56,7 @@ public class ITTValue implements Writable {
 		// Output format:
 		// termFrequency [offset1,offset2,...]
 				
-		String str = termFrequency.toString() + " ";
+		String str = " ";
 				
 		int len = offset.size();
 		str = str.concat("[" + offset.get(0).toString());

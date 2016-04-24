@@ -1,4 +1,4 @@
-package part3;
+package invertedindex;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -122,9 +122,9 @@ public class TableValue implements Writable {
 	public int getDocFreq() {
 		return docFreq;
 	}
-	
 	public ArrayList<TermMember> getTermMembers(){
 		return termMembers;
 	}
+		
 	
 }

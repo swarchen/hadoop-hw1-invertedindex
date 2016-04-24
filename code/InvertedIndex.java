@@ -14,8 +14,8 @@ import org.apache.hadoop.mapred.JobConf;
 public class InvertedIndex {
 	public static void main(String[] args) throws Exception {
 		InvertedIndex wc = new InvertedIndex();
-		//wc.run(args[0], args[1]);
-		wc.run2(args[0], args[1]);
+		wc.run(args[0], args[1]);
+		//wc.run2(args[0], args[1]);
 		
 	}
 	
