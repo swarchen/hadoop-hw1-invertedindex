@@ -1,4 +1,4 @@
-package part3;
+package invertedindex;
 
 import java.lang.Character;
 

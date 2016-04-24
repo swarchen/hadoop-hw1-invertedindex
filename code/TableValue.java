@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
 
-import part4.Retrieval;
 
 public class TableValue implements Writable {
 	private int						docFreq;
@@ -128,46 +127,4 @@ public class TableValue implements Writable {
 		return termMembers;
 	}
 	
-	public ArrayList<Double> getWeights() {
-		ArrayList<Double> weights = new ArrayList<Double>();
-		int len = termMembers.size();
-		
-		for (int i = 0; i < len; i ++) {
-			double TF     = termMembers.get(i).getTermFreq();
-			double N      = Retrieval.getFilesNum();
-			double IDF    = Math.log(N / (double)docFreq);
-			double weight = TF * IDF;
-			
-			System.out.println("OMG");
-			if (termMembers.get(i).getFileName().equals("glossary")) {
-				System.out.println(TF);
-				System.out.println(N);
-				System.out.println(IDF);
-				System.out.println(weight);
-			}
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			weights.add(weight);
-		}
-		return weights;
-	}
-	
-	public Double getWeight(String fileName) {
-		double N      = Retrieval.getFilesNum();
-		double IDF    = Math.log(N / (double)docFreq);
-		double TF     = 0.0;
-		double weight = 0.0;
-		
-		for (TermMember tm : termMembers) {
-			
-			if (tm.getFileName().equals(fileName)) {
-				TF = tm.getTermFreq();
-				break;
-			}
-		}
-		weight = TF * IDF;
-		return weight;
-	}
 }
